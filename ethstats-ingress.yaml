@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ethstats-ingress
+  labels:
+    app: eth-ethstats
+spec:
+  rules:
+  - host: ethstats.ethereum.k8s
+    http: 
+      paths:
+      - backend:
+          serviceName: eth-ethstats
+          servicePort: 80
+        path: /
+    
