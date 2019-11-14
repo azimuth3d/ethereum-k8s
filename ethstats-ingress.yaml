@@ -4,6 +4,10 @@ metadata:
   name: ethstats-ingress
   labels:
     app: eth-ethstats
+  annotations:
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
 spec:
   rules:
   - host: ethstats.ethereum.k8s
